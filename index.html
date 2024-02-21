@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Open+Sans:wght@700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Favicon -->
+
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+<link rel="manifest" href="img/favicons/site.webmanifest">
+<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="description" content="photos to order"/>
+<meta name="keywords" content="photos to order"/>
+
+
+<title>Фото-бутик</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Sprite-->
+
+  <svg style="display: none;">
+
+    <symbol id="facebook" viewBox="0 0 96.227 96.227">
+      <g>
+        <path d="m73.099 15.973-9.058.004c-7.102 0-8.477 3.375-8.477 8.328v10.921h16.938l-.006 17.106h-16.932v43.895h-17.667v-43.895h-14.77v-17.106h14.77v-12.614c0-14.64 8.943-22.612 22.003-22.612l13.2.021z"></path>
+      </g>
+    </symbol>
+
+    <symbol id="twitter" viewBox="0 0 310 310">
+      <g>
+        <path d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73 c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783 c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598 C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467 c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977 c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889 c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597 c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961 c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895 c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367 c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998 C307.394,57.037,305.009,56.486,302.973,57.388z"></path>
+      </g>
+    </symbol>
+
+    <symbol id="linkedin" viewBox="0 0 438.536 438.536">
+      <g>
+        <path d="M414.41,24.123C398.333,8.042,378.963,0,356.315,0H82.228C59.58,0,40.21,8.042,24.126,24.123 C8.045,40.207,0.003,59.576,0.003,82.225v274.084c0,22.647,8.042,42.018,24.123,58.102c16.084,16.084,35.454,24.126,58.102,24.126 h274.084c22.648,0,42.018-8.042,58.095-24.126c16.084-16.084,24.126-35.454,24.126-58.102V82.225 C438.532,59.576,430.49,40.204,414.41,24.123z M133.618,367.157H67.666V169.016h65.952V367.157z M127.626,132.332 c-6.851,6.567-15.893,9.851-27.124,9.851h-0.288c-10.848,0-19.648-3.284-26.407-9.851c-6.76-6.567-10.138-14.703-10.138-24.41 c0-9.897,3.476-18.083,10.421-24.556c6.95-6.471,15.942-9.708,26.98-9.708c11.039,0,19.89,3.237,26.553,9.708 c6.661,6.473,10.088,14.659,10.277,24.556C137.899,117.625,134.477,125.761,127.626,132.332z M370.873,367.157h-65.952v-105.92 c0-29.879-11.036-44.823-33.116-44.823c-8.374,0-15.42,2.331-21.128,6.995c-5.715,4.661-9.996,10.324-12.847,16.991 c-1.335,3.422-1.999,8.75-1.999,15.981v110.775h-65.952c0.571-119.529,0.571-185.579,0-198.142h65.952v27.974 c13.867-21.681,33.558-32.544,59.101-32.544c22.84,0,41.21,7.52,55.104,22.554c13.895,15.037,20.841,37.214,20.841,66.519v113.64 H370.873z"></path>
+      </g>
+    </symbol>
+
+  </svg>
+
+  <!-- Header -->
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="img/logo.png" alt="logo" />
+        </div>
+        
+        <nav class="nav" id="nav">
+          <a class="nav__link" href="#" data-scroll="#features">Features</a>
+          <a class="nav__link" href="#" data-scroll="#works">Works</a>
+          <a class="nav__link" href="#" data-scroll="#team">Our Team</a>
+          <a class="nav__link" href="#" data-scroll="#reviews">Reviews</a>
+          <a class="nav__link" href="#" data-scroll="#sign">Sign up</a>
+        </nav>
+
+        <button class="burger" type="button" id="navToggle">
+          <span class="burger__item">Menu</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+
+  <div class="intro" id="intro">
+    <div class="container">
+      <div class="intro_inner">
+        <h1 class="intro__title">
+          Your Website for Taking Photos of Your Life
+        </h1>
+        <h2 class="intro__subtitle">
+          Here we will help you capture your wonderful life in a Beautiful
+          Picture. We will also show that everything in the world is beautiful
+          and worthy of your attention.
+        </h2>
+        <a class="btn btn--red" href="#">Find Out More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+
+  <div class="container" id="features">
+    <div class="features">
+
+      <div class="features__item">
+        <img class="features__icon" src="img/features/1.png" alt="" />
+        <h4 class="features__title">red pencil and ruler</h4>
+        <div class="features__text">
+          This is simple text. It says that this site is very cool and
+          beautiful, most importantly made with soul. To give your eyes
+          pleasure.
+        </div>
+      </div>
+
+      <div class="features__item">
+        <img class="features__icon" src="img/features/2.png" alt="" />
+        <h4 class="features__title">red monitor</h4>
+        <div class="features__text">
+          This is simple text. It says that this site is very cool and
+          beautiful, most importantly made with soul. To give your eyes
+          pleasure.
+        </div>
+      </div>
+
+      <div class="features__item">
+        <img class="features__icon" src="img/features/3.png" alt="" />
+        <h4 class="features__title">red light bulb</h4>
+        <div class="features__text">
+          This is simple text. It says that this site is very cool and
+          beautiful, most importantly made with soul. To give your eyes
+          pleasure.
+        </div>
+      </div>
+
+      <div class="features__item">
+        <img class="features__icon" src="img/features/4.png" alt="" />
+        <h4 class="features__title">red atom</h4>
+        <div class="features__text">
+          This is simple text. It says that this site is very cool and
+          beautiful, most importantly made with soul. To give your eyes
+          pleasure.
+        </div>
+      </div>
+
+      <div class="features__item">
+        <img class="features__icon" src="img/features/5.png" alt="" />
+        <h4 class="features__title">red suitcase</h4>
+        <div class="features__text">
+          This is simple text. It says that this site is very cool and
+          beautiful, most importantly made with soul. To give your eyes
+          pleasure.
+        </div>
+      </div>
+
+      <div class="features__item">
+        <img class="features__icon" src="img/features/6.png" alt="" />
+        <h4 class="features__title">Download For Free</h4>
+        <div class="features__text">
+          This is simple text. It says that this site is very cool and
+          beautiful, most importantly made with soul. To give your eyes
+          pleasure.
+        </div>
+      </div>
+
+    </div> <!-- /.features -->
+  </div> <!-- /.container -->
+
+  <!-- Works -->
+
+  <div class="works" id="works">
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-1.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-2.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-3.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-4.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-5.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-6.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-7.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+    <div class="works__item">
+      <img class="works__photo" src="img/works/work-8.jpg" alt="" />
+      <div class="works__content">
+        <div class="works__title">Project Name</div>
+        <div class="works__text">User Interface Design</div>
+      </div>
+    </div>
+
+  </div> <!-- ./works -->
+
+  <!-- Team -->
+
+  <div class="team" id="team">
+    <div class="container">
+      <div class="team__inner">
+          
+        <div class="team__item">
+          <img class="team__photo" src="img/teams/team-1.jpg" alt="" />
+          <div class="team__name">Cool Camera</div>
+          <div class="team__prof">Chief By Photo</div>
+          <div class="team__text">
+            <p>
+              The coolest employee who will take the most beautiful photos for
+              you. Only you and your beauty will be in the photo.
+            </p>
+            <p>
+              You won't find a better person to take photographs because we
+              train everyone and everyone imitates us. We are waiting for you
+              at your photo shoot, see you soon.
+            </p>
+          </div>
+
+          <div class="social">
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </a>
+          </div>  <!-- ./social -->
+        
+        </div> <!-- ./team__item -->
+
+        <div class="team__item">
+          <img class="team__photo" src="img/teams/team-2.jpg" alt="" />
+          <div class="team__name">Sunflower</div>
+          <div class="team__prof">Photographer</div>
+          <div class="team__text">
+            <p>
+              The coolest employee who will take the most beautiful photos for
+              you. Only you and your beauty will be in the photo.
+            </p>
+            <p>
+              You won't find a better person to take photographs because we
+              train everyone and everyone imitates us. We are waiting for you
+              at your photo shoot, see you soon.
+            </p>
+            </div>
+
+            <div class="social">
+              <a class="social__item" href="#" target="_blank">
+                <svg class="social__icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+              <a class="social__item" href="#" target="_blank">
+                <svg class="social__icon">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+              <a class="social__item" href="#" target="_blank">
+                <svg class="social__icon">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
+            </div>  <!-- ./social -->
+
+        </div> <!-- ./team__item -->
+
+        <div class="team__item">
+          <img class="team__photo" src="img/teams/team-3.jpg" alt="" />
+          <div class="team__name">Light</div>
+          <div class="team__prof">World Chief</div>
+          <div class="team__text">
+            <p>
+              The coolest employee who will take the most beautiful photos for
+              you. Only you and your beauty will be in the photo.
+            </p>
+            <p>
+              You won't find a better person to take photographs because we
+              train everyone and everyone imitates us. We are waiting for you
+              at your photo shoot, see you soon.
+            </p>
+          </div>
+
+          <div class="social">
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </a>
+          </div>  <!-- ./social -->
+
+        </div> <!-- ./team__item -->
+
+        <div class="team__item">
+          <img class="team__photo" src="img/teams/team-4.jpg" alt="" />
+          <div class="team__name">Cat Lucy</div>
+          <div class="team__prof">Chief by mood</div>
+          <div class="team__text">
+            <p>
+              The coolest employee who will take the most beautiful photos for
+              you. Only you and your beauty will be in the photo.
+            </p>
+            <p>
+              You won't find a better person to take photographs because we
+              train everyone and everyone imitates us. We are waiting for you
+              at your photo shoot, see you soon.
+            </p>
+          </div>
+          
+          <div class="social">
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="_blank">
+              <svg class="social__icon">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </a>
+          </div>  <!-- ./social -->
+
+        </div> <!-- ./team__item -->
+
+      </div> <!-- /.team__inner -->
+    </div> <!-- /.container -->
+  </div> <!-- ./team -->
+
+  <!-- Reviews -->
+
+  <div class="reviews" id="reviews">
+    <div class="container">
+
+      <div class="reviews__slider" id="reviewsSlider">
+
+        <div class="slick-item">
+          <div class="reviews__item">
+            <div class="reviews__photo">
+              <img class="reviews__img" src="img/reviews/review-1.jpg" alt="">
+            </div>
+            <div class="reviews__content">
+              <div class="reviews__text">"Super site, super organization, 
+                I received very wonderful photos, I will admire myself in them for a long time..."
+              </div>
+              <div class="reviews__author">Mrs. Kotika Maris, best customer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slick-item">
+          <div class="reviews__item">
+            <div class="reviews__photo">
+              <img class="reviews__img" src="img/reviews/review-2.jpg" alt="">
+            </div>
+            <div class="reviews__content">
+              <div class="reviews__text">
+                "The best site, I am very pleased, I recommend it to everyone"
+              </div>
+              <div class="reviews__author">Mr. Kot Marise, best customer</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- ./container -->
+  </div> <!-- ./reviews -->
+
+    <!-- Download -->
+
+  <div class="download" id="sign">
+    <div class="container">
+      <h3 class="download__title">
+        Are You Ready to Start? Sign up Now For Free!
+      </h3>
+      <div class="download__text">
+        <p>Click on the red button below</p>
+      </div>
+      <a class="btn btn--red btn--long" href="#">Sign up here</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__block">
+          <h4 class="footer__title">Location</h4>
+            <address class="footer__address">
+              <div>We are located at: </div>
+              <div>your heart, your home, your apartment</div>
+            </address>
+        </div> 
+
+        <div class="footer__block">
+          <h4 class="footer__title">Share with love</h4>
+            <div class="social social--footer">
+              <a class="social__item" href="#" target="_blank">
+                <svg class="social__icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+              <a class="social__item" href="#" target="_blank">
+                <svg class="social__icon">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+              <a class="social__item" href="#" target="_blank">
+                <svg class="social__icon">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
+            </div> <!-- ./social -->
+        </div> <!-- ./footer__block -->
+
+        <div class="footer__block">
+          <h4 class="footer__title">About ActiveBox</h4>
+          <div class="footer__text">
+            <p>This is the best site where you can arrange a photo shoot that will preserve the best memories</p>
+          </div>
+        </div>
+
+      </div> <!-- ./footer__inner -->
+    </div> <!-- ./container -->
+
+    <div class="copyright">
+      <div class="container">
+        <div class="copyright__text">
+        <div>Copyright Ⓒ 2023 ActiveeBox. All Rights Reserved</div>
+        <div>Made by ♥ <span>me</span> and <span>my beautiful hands</span></div>
+        </div>
+      </div> <!-- ./container -->
+    </div>
+
+  </footer>
+
+  <!-- Javascript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
